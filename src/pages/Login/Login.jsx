@@ -6,18 +6,31 @@ export const Login = () => {
   const dispatch = useDispatch();
   const credentialRdx = useSelector(useData);
 
+  //Hooks
+
   const [credenciales, setCredenciales] = useState({
     email: "",
     password: "",
   });
 
+  const [credencialesError, setCredencialesError] = useState({
+    emailError: "",
+    passwordError: "",
+  });
+
+  const [credencialesValid, setCredencialesValid] = useState({
+    emailValid: false,
+    passwordValid: false,
+  });
+
+
+  // Hook que activa el botón de envío de datos
+  const [activeForm, setActiveForm] = useState(false);
+
   const [welcome, setWelcome] = useState("");
 
-  useEffect(() => {
-    if (credentialRdx.credentials.token) {
-      navigate("/");
-    }
-  }, []); //UseEffect siempre debe acabar con un array vacío 
+
+  //Handler
 
   const inputHandler = (e) => {
     setCredenciales((prevState) => ({
@@ -25,6 +38,16 @@ export const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  //useEffect (función ciclo de vida del componente)
+
+  useEffect(() => {
+    if (credentialRdx.credentials.token) {
+      navigate("/");
+    }
+  }, []); //UseEffect siempre debe acabar con un array vacío 
+
+
   return (
     <Container fluid>
         <Row className="LoginD">

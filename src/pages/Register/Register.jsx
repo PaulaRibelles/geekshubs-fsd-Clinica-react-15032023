@@ -8,24 +8,6 @@ export const Register = () => {
             <h2>Registro Usuario</h2>
           </div>
 
-            {/* INPUT DNI  */}
-
-          <InputText
-            className={
-              credencialesError.dniError === ""
-                ? "inputBasicDesign"
-                : "inputBasicDesign inputErrorDesign"
-              }
-              type="text"
-              maxLength="9"
-              name="dni"
-              placeholder="Escribe tu DNI"
-              required={true}
-              changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
-          />
-          <div>{credencialesError.dniError}</div>
-
             {/* INPUT NOMBRE */}
 
           <InputText
@@ -61,6 +43,24 @@ export const Register = () => {
             blurValidateFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.surnameError}</div>
+
+            {/* INPUT DNI  */}
+
+          <InputText
+            className={
+              credencialesError.dniError === ""
+                ? "inputBasicDesign"
+                : "inputBasicDesign inputErrorDesign"
+              }
+              type="text"
+              maxLength="9"
+              name="dni"
+              placeholder="Escribe tu DNI"
+              required={true}
+              changeFunction={(e) => inputHandler(e)}
+              blurValidateFunction={(e) => inputValidate(e)}
+          />
+          <div>{credencialesError.dniError}</div>
 
             {/* INPUT CIUDAD  */}
 
