@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { InputText } from '../../common/InputText/InputText';
 
 export const Login = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const credentialRdx = useSelector(useData);
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const credentialRdx = useSelector(useData);
 
   //Hooks
 
@@ -27,8 +27,6 @@ export const Login = () => {
   // Hook que activa el botón de envío de datos
   const [activeForm, setActiveForm] = useState(false);
 
-  const [welcome, setWelcome] = useState("");
-
 
   //Handler
 
@@ -41,11 +39,29 @@ export const Login = () => {
 
   //useEffect (función ciclo de vida del componente)
 
-  useEffect(() => {
-    if (credentialRdx.credentials.token) {
-      navigate("/");
+  useEffect(() =>{
+    for(let error in credencialesError){
+      if(credencialesError[error] !==""){
+        setActiveForm(false);
+        return;
+      }
     }
-  }, []); //UseEffect siempre debe acabar con un array vacío 
+    for(let vacio in credenciales){
+      if(credenciales[vacio] === ""){
+        setActiveForm(false);
+        return;
+      }
+    }
+    setActiveForm(true);
+  });
+
+  const [welcome, setWelcome] = useState("");
+
+  // useEffect(() => {
+  //   if (credentialRdx.credentials.token) {
+  //     navigate("/"); //Si el token no existe, redirigimos a home page
+  //   }
+  // }, []); //UseEffect siempre debe acabar con un array vacío 
 
 
   return (
@@ -66,7 +82,7 @@ export const Login = () => {
                     blurFunction={(e) => checkError(e)}
                   />
                   <InputText
-                    className={"inputFeoLogin"}
+                    className={"inputLogin"}
                     type={"password"}
                     name={"password"}
                     placeholder={""}
