@@ -57,11 +57,29 @@ export const Login = () => {
 
   const [welcome, setWelcome] = useState("");
 
-  // useEffect(() => {
-  //   if (credentialRdx.credentials.token) {
-  //     navigate("/"); //Si el token no existe, redirigimos a home page
-  //   }
-  // }, []); //UseEffect siempre debe acabar con un array vacío 
+  useEffect(() => {
+    if (credentialRdx.credentials.token) {
+      navigate("/"); //Si el token no existe, redirigimos a home page
+    }
+  }, []); //UseEffect siempre debe acabar con un array vacío 
+
+  const inputValidate = (e) => {
+    let error = "";
+    let check = checkInputs(
+      e.target.name,
+      e.target.value,
+      e.target.required
+    );
+      error = check.message;
+      setCredencialesValid((prevState) => ({
+        ...prevState,
+        [e.target.name + "Valid"] : check.validated,
+      }));
+      setCredencialesError((prevState) => ({
+        ...prevState,
+        [e.target.name + "Error"] : error,
+      }));
+  };
 
 
   return (
