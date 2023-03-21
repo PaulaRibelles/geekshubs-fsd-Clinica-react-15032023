@@ -92,7 +92,7 @@ export const Register = () => {
               type="text"
               maxLength="15"
               name="phone"
-              placeholder="Escribe tu número de teléfono"
+              placeholder="+34 Tu número de teléfono"
               required={true}
               changeFunction={(e) => inputHandler(e)}
               blurValidateFunction={(e) => inputValidate(e)}

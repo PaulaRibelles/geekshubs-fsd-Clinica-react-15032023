@@ -36,7 +36,7 @@ export const checkInputs = (name, data, required) => {
     case "phone":
         if (data === "" && required === true) {
             return { message: "Este campo es obligatorio", validated: false };
-        } else if (/^[0-9]{3}?[-\s\.]?[0-9]{3}?[-\s\.]?[0-9]{3}$/.test(data)) {
+        } else if (/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{3}?[-\s\.]?[0-9]{3}?[-\s\.]?[0-9]{3}$/.test(data)) {
             return { message: "Por favor, introduce un número de teléfono válido" };
         }
         return { message: "", validated: true };

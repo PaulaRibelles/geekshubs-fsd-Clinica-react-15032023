@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { InputText } from '../../common/InputText/InputText';
+import { checkInputs } from "../../helpers/useful";
 import "./Login.css";
 import { decodeToken } from "react-jwt";
 import { useDispatch, useSelector } from "react-redux";
-import { login, userData } from "../userSlice"
+// import { login, userData } from "../userSlice"
 import { useNavigate } from "react-router-dom";
+import { logMe } from '../../services/apiCalls';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -86,8 +88,8 @@ export const Login = () => {
       }));
   };
 
-  const logmein = () => {
-    logmein(credenciales).then(respuesta =>{
+  const LogmeIn = () => {
+    logMe(credenciales).then(respuesta =>{
       let decodificado = decodeToken(respuesta.data.token)
       let nameUser = respuesta.data.name 
       let datosBack = {
@@ -113,7 +115,7 @@ export const Login = () => {
 
   return (
     <Container fluid>
-        <Row className="LoginD">
+        <Row className="loginDesign">
             <col lg={6}>
               {welcome !== "" ? (
                 <div>{Welcome}</div>

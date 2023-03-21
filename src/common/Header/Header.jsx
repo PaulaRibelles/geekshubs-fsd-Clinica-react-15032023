@@ -18,7 +18,7 @@ const datosCredencialesRedux = useSelector(userData);
       </>
       : 
       <>
-      <Navigator ruta={"Perfil"} destino={"/profile"}/>
+      {/* <Navigator ruta={"Perfil"} destino={"/profile"}/> */}
       <Navigator ruta={"Logout"} destino={"/"}/>
       </>
       }
