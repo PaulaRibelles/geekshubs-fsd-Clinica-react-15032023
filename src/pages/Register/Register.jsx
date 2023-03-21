@@ -1,4 +1,5 @@
 import React from 'react'
+import { InputText } from '../../common/InputText/InputText';
 
 export const Register = () => {
 
