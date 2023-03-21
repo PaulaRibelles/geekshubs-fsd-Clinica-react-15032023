@@ -81,6 +81,30 @@ export const Login = () => {
       }));
   };
 
+  const logmein = () => {
+    logmein(credenciales).then(respuesta =>{
+      let decodificado = decodeToken(respuesta.data.token)
+      let nameUser = respuesta.data.name 
+      let datosBack = {
+        token: respuesta.data.token,
+        user: decodificado,
+        nameUser: nameUser,
+      };
+      dispatch(login({ credentials: datosBack}));
+      if (datosBack.token){
+        setWelcome(`Bienvenido/a ${nameUser} a la clínica TrueSmile`);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      }else {
+        setWelcome(`Error: ${respuesta.data}`)
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      }
+    })
+    .catch((error) => console.log(error));
+  };
 
   return (
     <Container fluid>
