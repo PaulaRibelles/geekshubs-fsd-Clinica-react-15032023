@@ -1,8 +1,119 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../common/InputText/InputText';
+import { checkInputs } from '../../helpers/useful';
+import { registerMe } from '../../services/apiCalls';
+import "./Register.css";
 
 export const Register = () => {
+  const navigate = useNavigate();
 
+  // Hooks para validación de errores
+
+  const [credenciales, setCredenciales] = useState({
+    dni: "",
+    name: "",
+    surname: "",
+    city: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+  const [credencialesError, setCredencialesError] = useState({
+    dniError: "",
+    nameError: "",
+    surnameError: "",
+    cityError: "",
+    phoneError: "",
+    emailError: "",
+    passwordError: "",
+  })
+  const [credencialesIsValid, setCredencialesIsValid] = useState({
+    dniIsValid: false,
+    nameIsValid: false,
+    surnameIsValid: false,
+    cityIsValid: false,
+    phoneIsValid: false,
+    emailIsValid: false,
+    passwordIsValid: false
+  })
+    // Hook validación 
+  const [activeForm, setActiveForm] = useState(false);
+
+  // Manejador de errores. (Actualiza el estado del componente)
+
+  const inputHandler = (e) => {
+    setCredenciales((preveState => ({...preveState, [e.target.name]: e.target.value,})));
+  };
+
+  // Función del ciclo de vida del componente
+
+  useEffect(()=>{
+    for(let error in credencialesError){
+      if(credencialesError[error] !== ""){
+        setActiveForm(false);
+        return;
+      }
+    }
+    for(let vacio in credenciales){
+      if(credenciales[vacio] === ""){
+        setActiveForm(false);
+        return;
+      }
+    }
+    for(let validated in credencialesIsValid){
+      if(credencialesIsValid[validated] === false){
+        setActiveForm(false);
+        return;
+      }
+    }
+    setActiveForm(true);
+  });
+
+  // Llamada a la función control de errores de los inputs
+
+const inputValidate = (e) => {
+  let error = "";
+  let checked = checkInputs(
+    e.target.name,
+    e.target.value,
+    e.target.required
+  );
+  error = checked.message; 
+  // Set del hook de las validaciones. Actualiza su estado anterior
+  setCredencialesIsValid((prevState) => ({
+    ...prevState,
+    [e.target.name + "IsValid"]: checked.validated,
+  }));
+  // Set del hook de los errores. Actualiza su estado anterior
+  setCredencialesError((prevState) => ({
+    ...prevState,
+    [e.target.name + "Error"]: error,
+  }));
+};
+
+const [congratulations, setCongratulations] = useState("");
+
+const registrame = () => {
+  registerMe(credenciales)
+  .then(respuesta => {
+    let nameUser = respuesta.data.name
+    if(nameUser){
+      setCongratulations(`Enhorabuena ${nameUser}, te has registrado correctamente`);
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
+    }
+    else{
+      setCongratulations(`Error: ${respuesta.data}`)
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
+    }
+  })
+
+  .catch((error) => console.log(error));
+};
       return (
         <div className="registerDesign">
           <div className="titleDesign">
