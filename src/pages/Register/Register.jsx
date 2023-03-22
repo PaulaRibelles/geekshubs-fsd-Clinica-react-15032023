@@ -28,14 +28,14 @@ export const Register = () => {
     emailError: "",
     passwordError: "",
   })
-  const [credencialesIsValid, setCredencialesIsValid] = useState({
-    dniIsValid: false,
-    nameIsValid: false,
-    surnameIsValid: false,
-    cityIsValid: false,
-    phoneIsValid: false,
-    emailIsValid: false,
-    passwordIsValid: false
+  const [credencialesValid, setCredencialesValid] = useState({
+    dniValid: false,
+    nameValid: false,
+    surnameValid: false,
+    cityValid: false,
+    phoneValid: false,
+    emailValid: false,
+    passwordValid: false
   })
     // Hook validación 
   const [activeForm, setActiveForm] = useState(false);
@@ -61,8 +61,8 @@ export const Register = () => {
         return;
       }
     }
-    for(let validated in credencialesIsValid){
-      if(credencialesIsValid[validated] === false){
+    for(let validated in credencialesValid){
+      if(credencialesValid[validated] === false){
         setActiveForm(false);
         return;
       }
@@ -81,7 +81,7 @@ const inputValidate = (e) => {
   );
   error = checked.message; 
   // Set del hook de las validaciones. Actualiza su estado anterior
-  setCredencialesIsValid((prevState) => ({
+  setCredencialesValid((prevState) => ({
     ...prevState,
     [e.target.name + "IsValid"]: checked.validated,
   }));
@@ -94,7 +94,7 @@ const inputValidate = (e) => {
 
 const [congratulations, setCongratulations] = useState("");
 
-const registrame = () => {
+const Registro = () => {
   registerMe(credenciales)
   .then(respuesta => {
     let nameUser = respuesta.data.name

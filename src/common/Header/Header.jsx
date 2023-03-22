@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../pages/userSlice'
 import { Navigator } from '../Navigator/Navigator'
 import "./Header.css"
 
 export const Header = () => {
+
+  const dataRdx = useSelector(userData);
+
+  const  dispatch = useDispatch();
 
 const datosCredencialesRedux = useSelector(userData);
   return (
