@@ -1,7 +1,7 @@
 import React from 'react'
 import './InputText.css'
 
-export const InputText = ({className, type, name, placeholder, required, changeFunction, blurFuction}) => {
+export const InputText = ({className, type, name, placeholder, required, changeFunction, blurFunction}) => {
   return (
     <>
       <input 
@@ -12,7 +12,7 @@ export const InputText = ({className, type, name, placeholder, required, changeF
         required={required}
 
         onChange={(e)=>changeFunction(e)}
-        onBlur={(e)=>blurFuction(e)}
+        onBlur={(e)=>blurFunction(e)}
       />
     </>
   )

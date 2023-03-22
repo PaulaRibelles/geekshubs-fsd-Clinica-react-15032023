@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const root = "https://expressmongooseauthjwt-production.up.railway.app"
+const root = "http://localhost:3000"
 
 export const logMe = async (body) => {
 
-    return await axios.post(`${root}/api/auth/login`, body);
+    return await axios.post(`${root}/auth/login`, body);
 
 }
 

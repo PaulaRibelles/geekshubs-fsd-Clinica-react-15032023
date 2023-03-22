@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux';
-import { userData } from '../../pages/userSlice'
+import { userData } from '../../pages/Slices/userSlice'
 import { Navigator } from '../Navigator/Navigator'
 import "./Header.css"
 

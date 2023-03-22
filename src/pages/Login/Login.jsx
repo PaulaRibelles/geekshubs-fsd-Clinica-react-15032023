@@ -1,17 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { InputText } from '../../common/InputText/InputText';
 import { checkInputs } from "../../helpers/useful";
 import "./Login.css";
 import { decodeToken } from "react-jwt";
 import { useDispatch, useSelector } from "react-redux";
-// import { login, userData } from "../userSlice"
+import { login, userData, userout } from "../Slices/userSlice"
 import { useNavigate } from "react-router-dom";
 import { logMe } from '../../services/apiCalls';
+import { Col, Container, Row } from 'react-bootstrap';
 
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const credentialRdx = useSelector(userData);
+
+  const logmeOut = () => {
+    dispatch (userout({credentials : {}, token : ""}))
+    return navigate ("/")
+  }
 
   //Hooks
 
@@ -32,7 +38,8 @@ export const Login = () => {
 
 
   // Hook que activa el botón de envío de datos
-  const [activeForm, setActiveForm] = useState(false);
+  const [loginAct, setLoginAct] = useState(false);
+  const [welcome, setWelcome] = useState("");
 
 
   //Handler
@@ -49,66 +56,56 @@ export const Login = () => {
   useEffect(() =>{
     for(let error in credencialesError){
       if(credencialesError[error] !==""){
-        setActiveForm(false);
+        setLoginAct(false);
         return;
       }
     }
     for(let vacio in credenciales){
       if(credenciales[vacio] === ""){
-        setActiveForm(false);
+        setLoginAct(false);
         return;
       }
     }
-    setActiveForm(true);
+    for(let validated in credencialesValid){
+      if(credencialesValid[validated] === false){
+        setLoginAct(false);
+        return;
+      }
+    }
+    setLoginAct(true);
   });
 
-  const [welcome, setWelcome] = useState("");
 
-  useEffect(() => {
-    if (credentialRdx.credentials.token) {
-      navigate("/"); //Si el token no existe, redirigimos a home page
-    }
-  }, []); //UseEffect siempre debe acabar con un array vacío 
-
-  const inputValidate = (e) => {
+  const checkError = (e) => {
     let error = "";
-    let check = checkInputs(
-      e.target.name,
-      e.target.value,
-      e.target.required
-    );
-      error = check.message;
-      setCredencialesValid((prevState) => ({
-        ...prevState,
-        [e.target.name + "Valid"] : check.validated,
-      }));
-      setCredencialesError((prevState) => ({
-        ...prevState,
-        [e.target.name + "Error"] : error,
-      }));
+    let checked = checkInputs(e.target.name, e.target.value, e.target.required);
+    error = checked.message;
+    setCredencialesValid((prevState) => ({
+      ...prevState,
+      [e.target.name + "Vali"]: checked.checkInputs,
+    }));
+    setCredencialesError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: error,
+    }));
   };
+  
 
-  const LogmeIn = () => {
-    logMe(credenciales).then(respuesta =>{
-      let decodificado = decodeToken(respuesta.data.token)
-      let nameUser = respuesta.data.name 
+  const logmeIn = () => {
+    logMe(credenciales)
+      .then(respuesta =>{
+      let decodificado = decodeToken(respuesta.data) 
       let datosBack = {
-        token: respuesta.data.token,
-        user: decodificado,
-        nameUser: nameUser,
+        token: respuesta.data,
+        // user: decodificado,
       };
+      console.log(decodificado, "heeeei");
       dispatch(login({ credentials: datosBack}));
-      if (datosBack.token){
-        setWelcome(`Bienvenido/a ${nameUser} a la clínica TrueSmile`);
+      
+        // setWelcome(`Bienvenido/a ${} a la clínica TrueSmile`);
         setTimeout(() => {
           navigate("/");
         }, 3000);
-      }else {
-        setWelcome(`Error: ${respuesta.data}`)
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
-      }
     })
     .catch((error) => console.log(error));
   };
@@ -116,13 +113,13 @@ export const Login = () => {
   return (
     <Container fluid>
         <Row className="loginDesign">
-            <col lg={6}>
+            <Col lg={6}>
               {welcome !== "" ? (
-                <div>{Welcome}</div>
+                <div>{welcome}</div>
               ) : (
                 <div>
                   <InputText
-                    className={"inputLogin"}
+                    className={""}
                     type={"email"}
                     name={"email"}
                     placeholder={"email..."}
@@ -131,10 +128,10 @@ export const Login = () => {
                     blurFunction={(e) => checkError(e)}
                   />
                   <InputText
-                    className={"inputLogin"}
+                    className={""}
                     type={"password"}
                     name={"password"}
-                    placeholder={""}
+                    placeholder={"password..."}
                     required={true}
                     changeFunction={(e) => inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
@@ -142,7 +139,10 @@ export const Login = () => {
                 </div>
               )
             }
-            </col>
+            <div onClick={() => logmeIn()}>LOG ME!</div>
+            <div onClick={() => logmeOut()}>LOG Out!</div>
+        
+            </Col>
         </Row>
     </Container>
   )

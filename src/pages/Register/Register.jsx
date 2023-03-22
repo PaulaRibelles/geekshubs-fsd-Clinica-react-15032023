@@ -38,7 +38,7 @@ export const Register = () => {
     passwordValid: false
   })
     // Hook validación 
-  const [activeForm, setActiveForm] = useState(false);
+  const [setLoginActrm, setsetLoginActrm] = useState(false);
 
   // Manejador de errores. (Actualiza el estado del componente)
 
@@ -51,23 +51,23 @@ export const Register = () => {
   useEffect(()=>{
     for(let error in credencialesError){
       if(credencialesError[error] !== ""){
-        setActiveForm(false);
+        setsetLoginActrm(false);
         return;
       }
     }
     for(let vacio in credenciales){
       if(credenciales[vacio] === ""){
-        setActiveForm(false);
+        setsetLoginActrm(false);
         return;
       }
     }
     for(let validated in credencialesValid){
       if(credencialesValid[validated] === false){
-        setActiveForm(false);
+        setsetLoginActrm(false);
         return;
       }
     }
-    setActiveForm(true);
+    setsetLoginActrm(true);
   });
 
   // Llamada a la función control de errores de los inputs
@@ -245,8 +245,8 @@ const Registro = () => {
               blurValidateFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.passwordError}</div>
-          <div className={activeForm ? "buttonOff buttonOn" : "buttonOff" } 
-          onClick={activeForm ? () => {fakeRegisterFunction();} : () => {} }>Registrarse
+          <div className={setLoginActrm ? "buttonOff buttonOn" : "buttonOff" } 
+          onClick={setLoginActrm ? () => {fakeRegisterFunction();} : () => {} }>Registrarse
           </div>
         </div>
       );
