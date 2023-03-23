@@ -13,13 +13,12 @@ export const registerMe = async (body) => {
     return await axios.post(`${root}/auth/register`, body);
 }
     
-// export const bringUsers = async (token) => {
-//     let config = {
-//       headers: { 
-//         'Authorization': 'Bearer '+ token,  
-//       }
-//     };
-
-//     return await axios.get(`${root}/api/users`, config);
-// }
+export const bringUsers = async (token) => {
+    let config = {
+        headers: { 
+        'Authorization': 'Bearer '+ token,  
+    }
+    };
+    return await axios.get(`${root}/api/users`, config);
+}
 

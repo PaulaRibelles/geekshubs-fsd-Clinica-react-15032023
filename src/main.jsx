@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
         <BarraNav/>
           <App/>
-          
         </BrowserRouter>  
       {/* </PersistGate> */}
     </Provider>

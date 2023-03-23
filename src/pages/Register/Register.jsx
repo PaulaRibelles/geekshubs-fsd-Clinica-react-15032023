@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../common/InputText/InputText';
 import { checkInputs } from '../../helpers/useful';
@@ -38,7 +39,7 @@ export const Register = () => {
     passwordValid: false
   })
     // Hook validación 
-  const [setLoginActrm, setsetLoginActrm] = useState(false);
+  const [registerAct, setRegisterAct] = useState(false);
 
   // Manejador de errores. (Actualiza el estado del componente)
 
@@ -51,23 +52,25 @@ export const Register = () => {
   useEffect(()=>{
     for(let error in credencialesError){
       if(credencialesError[error] !== ""){
-        setsetLoginActrm(false);
+        setRegisterAct(false);
         return;
       }
     }
+
     for(let vacio in credenciales){
       if(credenciales[vacio] === ""){
-        setsetLoginActrm(false);
+        setRegisterAct(false);
         return;
       }
     }
+
     for(let validated in credencialesValid){
       if(credencialesValid[validated] === false){
-        setsetLoginActrm(false);
+        setRegisterAct(false);
         return;
       }
     }
-    setsetLoginActrm(true);
+    setRegisterAct(true);
   });
 
   // Llamada a la función control de errores de los inputs
@@ -83,7 +86,7 @@ const inputValidate = (e) => {
   // Set del hook de las validaciones. Actualiza su estado anterior
   setCredencialesValid((prevState) => ({
     ...prevState,
-    [e.target.name + "IsValid"]: checked.validated,
+    [e.target.name + "Valid"]: checked.validated,
   }));
   // Set del hook de los errores. Actualiza su estado anterior
   setCredencialesError((prevState) => ({
@@ -92,20 +95,20 @@ const inputValidate = (e) => {
   }));
 };
 
-const [congratulations, setCongratulations] = useState("");
+const [welcome, setWelcome] = useState("");
 
 const Registro = () => {
   registerMe(credenciales)
   .then(respuesta => {
     let nameUser = respuesta.data.name
     if(nameUser){
-      setCongratulations(`Enhorabuena ${nameUser}, te has registrado correctamente`);
+      setWelcome(`Enhorabuena ${nameUser}, te has registrado correctamente`);
       setTimeout(() => {
         navigate("/login");
       }, 3000);
     }
     else{
-      setCongratulations(`Error: ${respuesta.data}`)
+      setWelcome(`Error: ${respuesta.data}`)
       setTimeout(() => {
         window.location.reload();
       }, 3000);
@@ -114,12 +117,18 @@ const Registro = () => {
 
   .catch((error) => console.log(error));
 };
-      return (
-        <div className="registerDesign">
+  return (
+    <Container fluid>
+      <Row className="registerDesign">
+        <Col lg={6}>
           <div className="titleDesign">
             <h2>Registro Usuario</h2>
           </div>
-
+          {welcome !== "" ? (
+                <div>{welcome}</div>
+              ) : (
+                <div>
+          
             {/* INPUT NOMBRE */}
 
           <InputText
@@ -129,12 +138,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
-              maxLength="30"
+              maxLength={25}
               name="name"
               placeholder="Escribe tu nombre"
               required={true}
               changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
+              blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.nameError}</div>
 
@@ -147,12 +156,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
             }
             type="text"
-            maxLength="50"
+            maxLength={50}
             name="surname"
             placeholder="Escribe tus apellidos"
             required={true}
             changeFunction={(e) => inputHandler(e)}
-            blurValidateFunction={(e) => inputValidate(e)}
+            blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.surnameError}</div>
 
@@ -165,12 +174,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
-              maxLength="9"
+              maxLength={9}
               name="dni"
               placeholder="Escribe tu DNI"
               required={true}
               changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
+              blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.dniError}</div>
 
@@ -183,12 +192,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
-              maxLength="30"
+              maxLength={50}
               name="city"
               placeholder="Escribe tu ciudad"
               required={false}
               changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
+              blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.cityError}</div>
 
@@ -201,12 +210,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
-              maxLength="15"
+              maxLength={12}
               name="phone"
               placeholder="+34 Tu número de teléfono"
               required={true}
               changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
+              blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.phoneError}</div>
 
@@ -219,12 +228,12 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
             }
             type="email"
-            maxLength="50"
+            maxLength={30}
             name="email"
             placeholder="Escribe un email válido"
             required={true}
             changeFunction={(e) => inputHandler(e)}
-            blurValidateFunction={(e) => inputValidate(e)}
+            blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.emailError}</div>
 
@@ -237,17 +246,22 @@ const Registro = () => {
                 : "inputBasicDesign inputErrorDesign"
             }
               type="password"
-              maxLength="30"
+              maxLength={15}
               name="password"
               placeholder="Escribe la contraseña"
               required={true}
               changeFunction={(e) => inputHandler(e)}
-              blurValidateFunction={(e) => inputValidate(e)}
+              blurFunction={(e) => inputValidate(e)}
           />
           <div>{credencialesError.passwordError}</div>
-          <div className={setLoginActrm ? "buttonOff buttonOn" : "buttonOff" } 
-          onClick={setLoginActrm ? () => {fakeRegisterFunction();} : () => {} }>Registrarse
+          <div className={registerAct ? "buttonDes buttonAct" : "buttonDes" }
+          onClick={Registro}>Registrarse 
           </div>
         </div>
-      );
-    };
+          )
+          }       
+          </Col> 
+        </Row>
+      </Container>
+    );
+  };

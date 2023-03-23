@@ -25,9 +25,9 @@ export const checkInputs = (name, data, required) => {
     case "password":
         if (data === "" && required === true) {
             return { message: "Este campo es obligatorio", validated: false };
-        } else if (data.length < 8) {
+        } else if (data.length < 6) {
             return {
-                message: "La contraseña debe tener un mínimo de 8 caracteres",
+                message: "La contraseña debe tener un mínimo de 6 caracteres",
                 validated: false,
             };
         }
@@ -36,20 +36,20 @@ export const checkInputs = (name, data, required) => {
     case "phone":
         if (data === "" && required === true) {
             return { message: "Este campo es obligatorio", validated: false };
-        } else if (/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{3}?[-\s\.]?[0-9]{3}?[-\s\.]?[0-9]{3}$/.test(data)) {
+        } else if (!/\+?\(?\d{2,4}\)?[\d\s-]{9}/.test(data)) {
             return { message: "Por favor, introduce un número de teléfono válido" };
         }
         return { message: "", validated: true };
-        break;
+        
 
     case "dni":
         if (data === "" && required === true) {
             return { message: "Este campo es obligatorio", validated: false };
-        } else if ((/^[0-9]+([.][0-9]+)?$/).test(data)) {
-            return { message: "Formato DNI incorrecto", validated: false };
+        } else if (!/^[a-z]{1}[0-9]{8}?$/i.test(data)) {
+            return { message: "Formato DNIincorrecto", validated: false };
         }
             return { message: "", validated: true };
-        break;
+        
 
     default:
         console.log("No se ha reconocido este campo");

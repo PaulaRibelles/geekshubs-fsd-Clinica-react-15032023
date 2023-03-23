@@ -94,15 +94,15 @@ export const Login = () => {
   const logmeIn = () => {
     logMe(credenciales)
       .then(respuesta =>{
-      let decodificado = decodeToken(respuesta.data) 
+
+      let decodificado = decodeToken(respuesta.data.token) 
       let datosBack = {
         token: respuesta.data,
-        // user: decodificado,
+        user: decodificado,
       };
-      console.log(decodificado, "heeeei");
       dispatch(login({ credentials: datosBack}));
       
-        // setWelcome(`Bienvenido/a ${} a la clínica TrueSmile`);
+        setWelcome(`Bienvenido/a ${decodificado.email} a la clínica TrueSmile`);
         setTimeout(() => {
           navigate("/");
         }, 3000);
@@ -114,6 +114,9 @@ export const Login = () => {
     <Container fluid>
         <Row className="loginDesign">
             <Col lg={6}>
+            <div className="titleDesign">
+            <h2>Login</h2>
+            </div>
               {welcome !== "" ? (
                 <div>{welcome}</div>
               ) : (
@@ -139,8 +142,8 @@ export const Login = () => {
                 </div>
               )
             }
-            <div onClick={() => logmeIn()}>LOG ME!</div>
-            <div onClick={() => logmeOut()}>LOG Out!</div>
+            <div className='buttonDes' onClick={() => logmeIn()}>LOG ME!</div>
+            <div className='buttonDes' onClick={() => logmeOut()}>LOG Out!</div>
         
             </Col>
         </Row>
