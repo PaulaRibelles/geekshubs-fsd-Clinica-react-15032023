@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../common/InputText/InputText';
-import { checkInputs } from '../../helpers/useful';
+import { checkInputs } from '../../Helpers/useful';
 import { registerMe } from '../../services/apiCalls';
 import "./Register.css";
 
