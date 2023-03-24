@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { InputText } from '../../common/InputText/InputText';
-import { checkInputs } from "../../helpers/useful";
+import { checkInputs } from "../../Helpers/useful";
 import "./Login.css";
 import { decodeToken } from "react-jwt";
 import { useDispatch, useSelector } from "react-redux";
