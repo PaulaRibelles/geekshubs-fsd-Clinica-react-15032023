@@ -27,5 +27,20 @@ useEffect(() => {
     }
 }, []);
 
-    return <div className="">I am profile</div>;
+return (
+    <Container fluid>
+        <Row className='profileDesign'>
+            <Col className='d-flex flex-column align-items-center justify-content-center'>
+                <div className='profileDivs'>Nombre</div>
+                <div>{userProfile.name}</div>
+                <div className='profileDivs'>Apellido</div>
+                <div>{userProfile.surname}</div>
+                <div className='profileDivs'>Telefono</div>
+                <div>{userProfile.phone}</div>
+                <div className='profileDivs'>Email</div>
+                <div>{userProfile.email}</div>
+            </Col>
+        </Row>
+    </Container>
+    )
 };
