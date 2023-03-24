@@ -33,13 +33,13 @@ return (
         <Row className='profileDesign'>
             <Col className='d-flex flex-column align-items-center justify-content-center'>
                 <div className='profileDivs'>Nombre</div>
-                <div>{userProfile.name}</div>
+                <div>{Profile.name}</div>
                 <div className='profileDivs'>Apellido</div>
-                <div>{userProfile.surname}</div>
+                <div>{Profile.surname}</div>
                 <div className='profileDivs'>Telefono</div>
-                <div>{userProfile.phone}</div>
+                <div>{Profile.phone}</div>
                 <div className='profileDivs'>Email</div>
-                <div>{userProfile.email}</div>
+                <div>{Profile.email}</div>
             </Col>
         </Row>
     </Container>
