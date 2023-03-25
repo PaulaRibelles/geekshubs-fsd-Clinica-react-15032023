@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,6 @@ useEffect(() => {
     if(!user?.name){
         myProfile(credentialsRdx.credentials.token.token)
         .then((respuesta) => {
-            console.log(respuesta);
             setUsers(respuesta.data)
         })
     }
@@ -32,14 +31,14 @@ return (
     <Container fluid>
         <Row className='profileDesign'>
             <Col className='d-flex flex-column align-items-center justify-content-center'>
-                <div className='profileDivs'>Nombre</div>
-                <div>{Profile.name}</div>
-                <div className='profileDivs'>Apellido</div>
-                <div>{Profile.surname}</div>
-                <div className='profileDivs'>Telefono</div>
-                <div>{Profile.phone}</div>
-                <div className='profileDivs'>Email</div>
-                <div>{Profile.email}</div>
+                <Card style={{ width: '10rem'}}>
+                    <Card.Body>
+                    <Card.Title>{Profile.data.name}</Card.Title>
+                    <Card.Text>{Profile.data.surname}</Card.Text>
+                    <Card.Text>{Profile.data.phone}</Card.Text>
+                    <Card.Text>{Profile.data.email}</Card.Text>
+                    </Card.Body>
+                </Card>
             </Col>
         </Row>
     </Container>
