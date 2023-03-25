@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
+import "./Profile.css"
+
 import { useNavigate } from "react-router-dom";
 import { myProfile } from "../../services/apiCalls";
 import { userData } from "../Slices/userSlice";
@@ -13,13 +15,10 @@ export const Profile = () => {
     const credentialsRdx = useSelector(userData);
     let navigate = useNavigate();
 
-        console.log(credentialsRdx, "Holiwiiiiii");
-
 useEffect(() => {
     if(!user?.name){
         myProfile(credentialsRdx.credentials.token.token)
         .then((respuesta) => {
-            console.log(respuesta, "Heip");
             setUsers(respuesta.data)
         })
     }
@@ -29,7 +28,6 @@ useEffect(() => {
     navigate("/");
     }
 }, []);
-console.log(user)
 
 return (
     <Container fluid>
