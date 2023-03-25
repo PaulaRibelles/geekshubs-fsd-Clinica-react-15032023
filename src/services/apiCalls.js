@@ -31,7 +31,6 @@ export const myProfile = async (token) =>{
     }
     };
 
-    console.log(token,"soc config....")
     return await axios.get(`${root}/user/profile`, config);
 }
 
