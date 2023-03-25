@@ -16,7 +16,7 @@ export const BarraNav = () => {
         </Nav>
         <Nav>
             <Nav.Link as={Link} to={'/profile'}>Profile</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">Logout</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">Appointment</Nav.Link>
         </Nav>
         </Navbar.Collapse>
     </Container>

@@ -33,10 +33,10 @@ return (
             <Col className='d-flex flex-column align-items-center justify-content-center'>
                 <Card style={{ width: '10rem'}}>
                     <Card.Body>
-                    <Card.Title>{Profile.data.name}</Card.Title>
-                    <Card.Text>{Profile.data.surname}</Card.Text>
-                    <Card.Text>{Profile.data.phone}</Card.Text>
-                    <Card.Text>{Profile.data.email}</Card.Text>
+                    <Card.Title>{Profile.name}</Card.Title>
+                    <Card.Text>{Profile.surname}</Card.Text>
+                    <Card.Text>{Profile.phone}</Card.Text>
+                    <Card.Text>{Profile.email}</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
