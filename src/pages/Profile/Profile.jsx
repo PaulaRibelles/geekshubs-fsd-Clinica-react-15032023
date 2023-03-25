@@ -8,7 +8,6 @@ import { userData } from "../Slices/userSlice";
 
 export const Profile = () => {
     const [user, setUsers] = useState({
-
     })
 
     const credentialsRdx = useSelector(userData);
@@ -37,10 +36,10 @@ return (
             <Col className='d-flex flex-column align-items-center justify-content-center'>
                 <Card style={{ width: '10rem'}}>
                     <Card.Body>
-                    <Card.Title>{Profile.name}</Card.Title>
-                    <Card.Text>{Profile.surname}</Card.Text>
-                    <Card.Text>{Profile.phone}</Card.Text>
-                    <Card.Text>{Profile.email}</Card.Text>
+                    <Card.Title>{myProfile.name}</Card.Title>
+                    <Card.Text>{myProfile.surname}</Card.Text>
+                    <Card.Text>{myProfile.phone}</Card.Text>
+                    <Card.Text>{myProfile.email}</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
