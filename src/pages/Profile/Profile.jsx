@@ -20,6 +20,7 @@ useEffect(() => {
     if(!user?.name){
         myProfile(credentialsRdx.credentials.token.token)
         .then((respuesta) => {
+            console.log(respuesta, "Heip");
             setUsers(respuesta.data)
         })
     }
