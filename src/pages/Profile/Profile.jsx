@@ -7,11 +7,14 @@ import { myProfile } from "../../services/apiCalls";
 import { userData } from "../Slices/userSlice";
 
 export const Profile = () => {
-    const [user, setUsers] = useState({})
+    const [user, setUsers] = useState({
+
+    })
 
     const credentialsRdx = useSelector(userData);
     let navigate = useNavigate();
 
+        console.log(credentialsRdx, "Holiwiiiiii");
 
 useEffect(() => {
     if(!user?.name){
