@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import dayjs from 'dayjs';
-import './Home.css';
+import './Appointment.css';
 import Calendar from 'react-calendar';
 import { InputText } from '../../common/InputText/InputText';
 
@@ -15,7 +15,7 @@ export const Appointment = () => {
 
   return (
     <div className='AppointDesign'>
-      <h2> Pide una cita</h2>
+      <h2 className='titleDesign'> Pide una cita</h2>
         <InputText 
         className={""}
         type="text"
