@@ -29,6 +29,7 @@ useEffect(() => {
     navigate("/");
     }
 }, []);
+console.log(user)
 
 return (
     <Container fluid>
