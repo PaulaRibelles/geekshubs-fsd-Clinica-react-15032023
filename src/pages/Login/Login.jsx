@@ -112,29 +112,29 @@ export const Login = () => {
 
   return (
     <Container fluid>
-        <Row className="design">
+        <Row className="design login-D">
             <Col lg={6}>
             <div className="titleDesign">
-            <h2>Login</h2>
+            <h2>Inicia sesión</h2>
             </div>
               {welcome !== "" ? (
                 <div>{welcome}</div>
               ) : (
                 <div>
                   <InputText
-                    className={""}
+                    className={"input-D"}
                     type={"email"}
                     name={"email"}
-                    placeholder={"email..."}
+                    placeholder={"email@example.com"}
                     required={true}
                     changeFunction={(e) => inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
                   />
                   <InputText
-                    className={""}
+                    className={"input-D"}
                     type={"password"}
                     name={"password"}
-                    placeholder={"password..."}
+                    placeholder={"password"}
                     required={true}
                     changeFunction={(e) => inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
@@ -142,8 +142,7 @@ export const Login = () => {
                 </div>
               )
             }
-            <div className='buttonDes' onClick={() => logmeIn()}>LOG ME!</div>
-            <div className='buttonDes' onClick={() => logmeOut()}>LOG Out!</div>
+            <div className='buttonDes' onClick={() => logmeIn()}>Login</div>
         
             </Col>
         </Row>
