@@ -36,7 +36,7 @@ export const Users = () => {
 
     return (
         <Container fluid>
-            <Row className='usersDesign'>
+            <Row className='design'>
                 <Col lg={6}>
         <div >
             {  users.length > 0 ? 

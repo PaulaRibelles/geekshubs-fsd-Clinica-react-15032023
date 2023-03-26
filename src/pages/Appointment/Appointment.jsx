@@ -39,6 +39,7 @@ export const Appointment = () => {
   
     const inputHandler = (e) => {
       setCredenciales((preveState => ({...preveState, [e.target.name]: e.target.value,})));
+      console.log(e.target.value, "holaaa");
     };
 
 
@@ -71,7 +72,7 @@ export const Appointment = () => {
   const checkError =(e) =>{}
 
   return (
-    <div className="appointmentDesign">
+    <div className="design">
       <div className="titleDesign">
         <h2>Pide tu cita con nosotros</h2>
       </div>
@@ -88,8 +89,8 @@ export const Appointment = () => {
       <div>
 
       <select name="doctor_id" onChange={(e) => inputHandler(e) }>
-        <option value="1">Dentista general</option>
-        <option value="2" selected>Dentista pediátrico</option>
+        <option value="1" selected >Dentista general</option>
+        <option value="2">Dentista pediátrico</option>
       </select>
       </div>
       <div>{credencialesError.passwordError}</div>

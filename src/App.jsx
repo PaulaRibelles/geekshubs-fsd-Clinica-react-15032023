@@ -1,13 +1,15 @@
 
 import './App.css'
+import { BarraNav } from './common/BarraNav/BarraNav'
 import { Body } from './pages/Body/Body'
 
 function App() {
 
   return (
-    <div className="App">
+    <>
+        <BarraNav/>
         <Body/>
-    </div>
+    </>
   )
 }
 

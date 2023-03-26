@@ -31,9 +31,9 @@ useEffect(() => {
 
 return (
     <Container fluid>
-        <Row className='profileDesign'>
+        <Row className='design'>
             <Col className='d-flex flex-column align-items-center justify-content-center'>
-                <Card style={{ width: '10rem'}}>
+                <Card style={{ width: '30rem'}}>
                     <Card.Body>
                     <Card.Title>{user.name}</Card.Title>
                     <Card.Text>{user.surname}</Card.Text>

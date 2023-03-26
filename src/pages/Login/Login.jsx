@@ -112,7 +112,7 @@ export const Login = () => {
 
   return (
     <Container fluid>
-        <Row className="loginDesign">
+        <Row className="design">
             <Col lg={6}>
             <div className="titleDesign">
             <h2>Login</h2>

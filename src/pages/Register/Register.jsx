@@ -120,7 +120,7 @@ const Registro = () => {
 
   return (
     <Container fluid>
-      <Row className="registerDesign">
+      <Row className="design">
         <Col lg={6}>
           <div className="titleDesign">
             <h2>Registro Usuario</h2>
