@@ -117,6 +117,7 @@ const Registro = () => {
 
   .catch((error) => console.log(error));
 };
+
   return (
     <Container fluid>
       <Row className="registerDesign">
