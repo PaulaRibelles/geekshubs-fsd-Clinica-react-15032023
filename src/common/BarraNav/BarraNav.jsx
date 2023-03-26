@@ -24,7 +24,7 @@ export const BarraNav = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-            <Nav.Link as={Link} to={'/appointment'}>Appointment</Nav.Link>
+            
         </Nav>
         <Nav>
         {!credencialesRdx.credentials.token ? (
@@ -35,6 +35,7 @@ export const BarraNav = () => {
         ) 
         : (
             <>
+            <Nav.Link as={Link} to={'/appointment'}>Appointment</Nav.Link>
             <Nav.Link as={Link} to={'/profile'}>Profile</Nav.Link>
             <Nav.Link as={Link} to={'/'} onClick={()=>logmeOut()}>Logout</Nav.Link>
             </>
