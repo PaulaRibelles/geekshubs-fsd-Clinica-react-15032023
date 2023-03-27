@@ -1,8 +1,8 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap';
+// import { Carousel } from 'react-bootstrap';
 import "./Home.css"
 
-import TrueSmile from "../../img/TrueSmile.jpg"
+// import TrueSmile from "../../img/TrueSmile.jpg"
 
 
 export const Home = () => {

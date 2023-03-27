@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-
-import "./Profile.css"
+import { bringAppointments } from "../../services/apiCalls";
 
 import { useNavigate } from "react-router-dom";
-import { myProfile } from "../../services/apiCalls";
 import { userData } from "../Slices/userSlice";
 
-export const Profile = () => {
+export const userAppointments = () => {
     const [user, setUsers] = useState({
     })
 
@@ -17,7 +15,7 @@ export const Profile = () => {
 
 useEffect(() => {
     if(!user?.name){
-        myProfile(credentialsRdx.credentials.token.token)
+        bringAppointments(credentialsRdx.credentials.token.token)
         .then((respuesta) => {
             setUsers(respuesta.data)
         })

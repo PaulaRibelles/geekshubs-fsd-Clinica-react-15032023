@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import { bringAppointments } from "../../services/apiCalls";
+
 
 import { useDispatch, useSelector } from "react-redux";
 import { addChoosen } from "../detailSlice";
