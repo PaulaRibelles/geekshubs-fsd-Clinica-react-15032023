@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const root = "https://clinica-truesmile-production.up.railway.app"
+// const root = "https://clinica-truesmile-production.up.railway.app"
 
-// const root = "https://localhost:3000"
+const root = "http://localhost:3000"
 
 export const logMe = async (body) => {
 
@@ -30,16 +30,28 @@ export const myProfile = async (token) =>{
         'Authorization': 'Bearer '+ token,  
     }
     };
-
     return await axios.get(`${root}/user/profile`, config);
 }
 
 export const myAppointment = async (body, token) => {
     let config = {
         headers: { 
-            'Authorization': `Bearer ${token}`,  
+            'Authorization': 'Bearer '+ token.token,  
+            
         }
     };
     return await axios.post(`${root}/appointment/create`, body, config);
 }
+
+export const bringAppointments = async (body, token) => {
+    let config = {
+        headers: { 
+            'Authorization': 'Bearer '+ token.token,  
+            
+        }
+    };
+    return await axios.post(`${root}/appointment/create`, body, config);
+}
+
+
 

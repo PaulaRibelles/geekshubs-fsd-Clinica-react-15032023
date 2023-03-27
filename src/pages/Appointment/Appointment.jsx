@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Appointment.css";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 // import Calendar from "react-calendar";
 import { InputText } from "../../common/InputText/InputText";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,9 @@ export const Appointment = () => {
   const [newDate, setnewDate] = useState(new Date());
   const ReduxCredentials = useSelector(userData);
   const { token } = ReduxCredentials.credentials;
-  const dateCalendar = dayjs(newDate).format("YYYY-MM-DD hh:mm:ss");
+  // const dateCalendar = dayjs(newDate).format("YYYY-MM-DD hh:mm:ss");
+
+  const [welcome, setWelcome] = useState("");
 
     const [credenciales, setCredenciales] = useState({
       doctor_id: "",
@@ -26,11 +28,7 @@ export const Appointment = () => {
       doctor_idError: "",
       dateError: "",
     })
-    const [credencialesValid, setCredencialesValid] = useState({
-      doctor_idValid: false,
-      dateIsValid: true,
-    })
-    
+
     const inputHandler = (e) => {
       setCredenciales((preveState => ({...preveState, [e.target.name]: e.target.value,})));
       console.log(e.target.value, "holaaa");
@@ -82,7 +80,7 @@ export const Appointment = () => {
       />
       <div>
 
-      <select name="doctor_id" onChange={(e) => inputHandler(e) }>
+      <select value={"default"} name="doctor_id" onChange={(e) => inputHandler(e) }>
         <option value="1" selected >Dentista general</option>
         <option value="2">Dentista pediátrico</option>
       </select>
