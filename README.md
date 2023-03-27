@@ -55,8 +55,8 @@ Pedir cita
 <img src="./src/img/captura-pedir-cita.png">
 
 ## Futuras funcionalidades
-✅ <p>Vista actualizar perfil </p>
-✅ <p>Vista como doctor ver todas las citas</p>
+<p>Vista actualizar perfil </p>
+<p>Vista como doctor ver todas las citas</p>
 
 ## Contribuciones :mailbox:
 Las sugerencias y aportaciones son siempre bienvenidas.  
@@ -95,13 +95,19 @@ Para conseguir el objetivo hemos recopilado información de:
 
  A los compañeros de Geekshubs València por encontrar siempre un minuto para ayudarme. 
 
+<div>
+<img src= "./src/img/profile-david-soto.png" width="50"/>
 - <a href="https://github.com/s0usaa">David Soto</a>
 
+<img src= "./src/img/profile-alvaro-bernabe.png.png" width="50"/>
 - <a href="https://github.com/alvarito101093/">Álvaro Bernabé</a>
 
+<img src= "./src/img/profile-ignacio-furio.png" width="50"/>
 - <a href="https://github.com/IgnacioFurio">Ignacio Furió</a>
 
 - <a href="">Ilko</a>
+
+</div>
 
 ## Contacto :email:
 
