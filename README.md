@@ -98,10 +98,12 @@ Para conseguir el objetivo hemos recopilado información de:
 <div>
 <img src= "./src/img/profile-david-soto.png" width="50"/>
 - <a href="https://github.com/s0usaa">David Soto</a>
-
-<img src= "./src/img/profile-alvaro-bernabe.png.png" width="50"/>
+</div>
+<div>
+<img src= "./src/img/profile-alvaro-bernabe.png" width="50"/>
 - <a href="https://github.com/alvarito101093/">Álvaro Bernabé</a>
-
+</div>
+<div>
 <img src= "./src/img/profile-ignacio-furio.png" width="50"/>
 - <a href="https://github.com/IgnacioFurio">Ignacio Furió</a>
 
