@@ -42,10 +42,21 @@ Tecnologías utilizadas:
 </a>
  </div>
 
+## Vistas
+Home
+<img src="">  
+Register
+<img src="./src/img/captura-register.png">
+Login
+<img src="./src/img/captura-login.png">
+Profile
+<img src="">
+Pedir cita
+<img src="./src/img/captura-pedir-cita.png">
 
 ## Futuras funcionalidades
-✅ Vista actualizar perfil 
-✅ Vista como doctor ver todas las citas
+✅ <p>Vista actualizar perfil </p>
+✅ <p>Vista como doctor ver todas las citas</p>
 
 ## Contribuciones :mailbox:
 Las sugerencias y aportaciones son siempre bienvenidas.  
@@ -82,7 +93,7 @@ Para conseguir el objetivo hemos recopilado información de:
 
 ## Agradecimientos :sparkles:
 
-- A los compañeros de Geekshubs València por encontrar siempre un minuto para ayudarme. 
+ A los compañeros de Geekshubs València por encontrar siempre un minuto para ayudarme. 
 
 - <a href="https://github.com/s0usaa">David Soto</a>
 
