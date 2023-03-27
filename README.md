@@ -17,7 +17,7 @@
 </details>
 
 ## Objetivo 🎯
-Este proyecto requería conexión a una <li><a href="https://github.com/PaulaRibelles/Clinica-TrueSmile">base de datos</a></li> creada anteriormente y usar react para crear una web.
+Este proyecto requería conexión a una <a href="https://github.com/PaulaRibelles/Clinica-TrueSmile">base de datos</a> creada anteriormente y usar react para crear una web.
 
 ## Sobre el proyecto 🔎
 Esta web está pensada para gestionar las citas entre paciente y doctores en una clínica dental, en este caso llamada TrueSmile. De este modo, los clientes van a poder registrarse, logearse, ver su perfil de usuario y crear citas con la especialidad del doctor que deseen. 
@@ -43,14 +43,11 @@ Tecnologías utilizadas:
  </div>
 
 ## Vistas
-Home
-<img src="">  
+ 
 Register
 <img src="./src/img/captura-register.png">
 Login
 <img src="./src/img/captura-login.png">
-Profile
-<img src="">
 Pedir cita
 <img src="./src/img/captura-pedir-cita.png">
 

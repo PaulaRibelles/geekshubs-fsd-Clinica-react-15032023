@@ -19,24 +19,18 @@ export const Appointment = () => {
   const dateCalendar = dayjs(newDate).format("YYYY-MM-DD hh:mm:ss");
 
     const [credenciales, setCredenciales] = useState({
-      // dental_intervention_id: "",
       doctor_id: "",
       date: "",  
     });
     const [credencialesError, setCredencialesError] = useState({
-      // dental_intervention_idError: "",
       doctor_idError: "",
       dateError: "",
     })
     const [credencialesValid, setCredencialesValid] = useState({
-      // dental_intervention_idValid: false,
       doctor_idValid: false,
       dateIsValid: true,
     })
-
-    // const [registerAct, setRegisterAct] = useState(false);
-  
-  
+    
     const inputHandler = (e) => {
       setCredenciales((preveState => ({...preveState, [e.target.name]: e.target.value,})));
       console.log(e.target.value, "holaaa");
@@ -95,9 +89,6 @@ export const Appointment = () => {
       </div>
       <div>{credencialesError.passwordError}</div>
       <div className='buttonDes' onClick={() => newAppointment()}>Pedir cita</div>
-          {/* <div className={registerAct ? "buttonDes buttonAct" : "buttonDes" }
-          onClick={newAppointment}>Pedir cita
-          </div> */}
     </div>
   );
 };
