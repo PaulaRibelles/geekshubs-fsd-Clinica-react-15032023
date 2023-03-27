@@ -135,7 +135,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.passwordError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
@@ -153,7 +153,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.passwordError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
             }
             type="text"
@@ -171,7 +171,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.dniError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
@@ -189,7 +189,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.passwordError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
@@ -207,7 +207,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.passwordError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
               }
               type="text"
@@ -225,7 +225,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.emailError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
             }
             type="email"
@@ -243,7 +243,7 @@ const Registro = () => {
           <InputText
             className={
               credencialesError.passwordError === ""
-                ? "inputBasicDesign"
+                ? "inputBasicDesign input-D"
                 : "inputBasicDesign inputErrorDesign"
             }
               type="password"

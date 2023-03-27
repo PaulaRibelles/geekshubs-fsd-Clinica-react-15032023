@@ -13,9 +13,6 @@ export const BarraFoot = () => {
           <Col>
           <p>true@smile.com</p>
           </Col>
-          <Col>
-          <p>000 000 000</p>
-          </Col>
         </Row>
       </Container>
     </div>
