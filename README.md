@@ -106,10 +106,10 @@ Para conseguir el objetivo hemos recopilado información de:
 <div>
 <img src= "./src/img/profile-ignacio-furio.png" width="50"/>
 - <a href="https://github.com/IgnacioFurio">Ignacio Furió</a>
-
+</div>
+<div>
 <img src= "./src/img/profile-ilko-garcia.png" width="50"/>
 - <a href="https://github.com/ilkogarcia">Ilko García</a>
-
 </div>
 
 ## Contacto :email:
