@@ -31,30 +31,24 @@ export const Appointment = () => {
 
     const inputHandler = (e) => {
       setCredenciales((preveState => ({...preveState, [e.target.name]: e.target.value,})));
-      console.log(e.target.value, "holaaa");
     };
-
 
     useEffect(() =>{
       console.log(credenciales);
     })
-
   
   const newAppointment = () => {
     myAppointment(credenciales, token)
     .then(respuesta => {
-      let nameUser = ReduxCredentials.credentials.nameUser;
+      let nameUser = ReduxCredentials.credentials.user.email;
       if(nameUser){
         setWelcome(`Gracias ${nameUser} por confiar en nosotros`);
         setTimeout(() => {
-          navigate("/login");
-        }, 3000);
+          navigate('/appointment-user')
+        }, 2000);
       }
       else{
         setWelcome(`Error: ${respuesta.data}`)
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
       }
     })
   
@@ -80,13 +74,16 @@ export const Appointment = () => {
       />
       <div>
 
-      <select value={"default"} name="doctor_id" onChange={(e) => inputHandler(e) }>
-        <option value="1" selected >Dentista general</option>
+      <select  name="doctor_id" onChange={(e) => inputHandler(e) }>
+        <option value="">Selecciona tu dentista</option>
+
+        <option value="1">Dentista general</option>
         <option value="2">Dentista pediátrico</option>
       </select>
       </div>
       <div>{credencialesError.passwordError}</div>
       <div className='buttonDes' onClick={() => newAppointment()}>Pedir cita</div>
+      <div>{welcome}</div>
     </div>
   );
 };
