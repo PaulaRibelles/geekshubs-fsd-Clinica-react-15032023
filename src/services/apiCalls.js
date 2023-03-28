@@ -40,14 +40,13 @@ export const myAppointment = async (body, token) => {
     return await axios.post(`${root}/appointment/create`, body, config);
 }
 
-export const bringAppointments = async (body, token) => {
+export const bringAppointments = async (token) => {
     let config = {
         headers: { 
-            'Authorization': 'Bearer '+ token.token,  
-            
+            'Authorization': 'Bearer '+ token,    
         }
     };
-    return await axios.post(`${root}/appointment/viewPatient`, body, config);
+    return await axios.get(`${root}/appointment/viewPatient`, config);
 }
 
 

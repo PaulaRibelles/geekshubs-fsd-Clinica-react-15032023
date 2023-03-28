@@ -12,7 +12,7 @@ export const Adminappointments = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [appointments, setappointments] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   const reduxCredentials = useSelector(userData);
 
@@ -21,7 +21,7 @@ export const Adminappointments = () => {
       bringappointments(reduxCredentials.credentials.token)
         .then((result) => {
           console.log(result);
-          setappointments(result.data);
+          setAppointments(result.data);
         })
         .catch((error) => console.log(error));
     }
