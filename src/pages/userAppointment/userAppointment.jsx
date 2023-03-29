@@ -26,7 +26,6 @@ useEffect(() => {
     }
 }, [user.name]);
 
-console.log(user, "holiiii");
 
 return (
     <Container fluid>

@@ -38,6 +38,7 @@ export const BarraNav = () => {
             <Nav.Link as={Link} to={'/appointment'}>Pide cita</Nav.Link>
             <Nav.Link as={Link} to={'/appointment-user'}>Tus citas</Nav.Link>
             <Nav.Link as={Link} to={'/profile'}>Profile</Nav.Link>
+            <Nav.Link as={Link} to={'/all-appointments'}>Citas existentes</Nav.Link>
             <Nav.Link as={Link} to={'/'} onClick={()=>logmeOut()}>Logout</Nav.Link>
             </>
         )}

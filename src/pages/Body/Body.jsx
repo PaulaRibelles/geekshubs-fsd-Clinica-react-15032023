@@ -8,6 +8,7 @@ import { Register } from '../Register/Register';
 import { Profile } from '../Profile/Profile';
 import { Appointment } from '../Appointment/Appointment';
 import { AppointmentsUser } from '../userAppointment/userAppointment';
+import { AdminAppointments } from '../Admin/Admin';
 
 
 export const Body = () => {
@@ -21,6 +22,7 @@ export const Body = () => {
                 <Route path='/profile' element={ <Profile />}/>
                 <Route path='/appointment' element={ <Appointment />}/>
                 <Route path='/appointment-user' element={ <AppointmentsUser />}/>
+                <Route path='/all-appointments' element={ <AdminAppointments />}/>
             </Routes>
         </>
     );
