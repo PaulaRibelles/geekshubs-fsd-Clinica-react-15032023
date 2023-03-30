@@ -1,30 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Card, Col, Container, Row } from "react-bootstrap";
+// import { useNavigate } from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { userData } from "../Slices/userSlice";
-import { bringAppointments } from "../../services/apiCalls";
+import { allAppointments } from "../../services/apiCalls";
 // import { addChoosen } from "../detailSlice";
 
-
-
 export const AdminAppointments = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   const [appointments, setAppointments] = useState([]);
-
-  console.log(appointments, "eoeoeoeoe");
 
   const reduxCredentials = useSelector(userData);
 
   useEffect(() => {
-    if (appointments.length === 0) {
-      bringAppointments(reduxCredentials.credentials.token)
+    if (!appointments?.length) {
+      allAppointments(reduxCredentials.credentials.token)
         .then((result) => {
-          console.log(result);
           setAppointments(result.data);
+          console.log(result.data, "datatatatatata");
         })
         .catch((error) => console.log(error));
     }
@@ -34,19 +30,24 @@ export const AdminAppointments = () => {
   return (
     <Container fluid>
     <Row className='design'>
+      {appointments.length > 0 ? (
         <Col className='d-flex flex-column align-items-center justify-content-center'>
-            {/* {user.map((citas) => {
+            {appointments.map((citas) => {
                 return (
-            <Card style={{ width: '30rem'}}>
+              <Card key={citas.id} style={{ width: '30rem'}}>
                 <Card.Body>
                 <Card.Title>{citas.Doctor.medical_speciality}</Card.Title>
-                <Card.Text>{citas.Doctor.User.name} {citas.Doctor.User.surname}</Card.Text>
-                <Card.Text>{citas.date}</Card.Text>
+                <Card.Text>Doctor/a: {citas.Doctor.User.name} {citas.Doctor.User.surname}</Card.Text>
+                <Card.Text>Fecha: {citas.date}</Card.Text>
+                <Card.Text>Paciente: {citas.Patient.User.name} {citas.Patient.User.surname}</Card.Text>
                 </Card.Body>
             </Card>
             )
-        })} */}
+        })}
         </Col>
+      ) : (
+        <div> Están llegando </div>
+      )}
     </Row>
 </Container>
   );
