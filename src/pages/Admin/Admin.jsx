@@ -20,12 +20,10 @@ export const AdminAppointments = () => {
       allAppointments(reduxCredentials.credentials.token)
         .then((result) => {
           setAppointments(result.data);
-          console.log(result.data, "datatatatatata");
         })
         .catch((error) => console.log(error));
     }
   }, [appointments]);
-
 
   return (
     <Container fluid>

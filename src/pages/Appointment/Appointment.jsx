@@ -73,7 +73,6 @@ export const Appointment = () => {
               blurFunction={(e)=> checkError(e)}
       />
       <div>
-
       <select  name="doctor_id" onChange={(e) => inputHandler(e) }>
         <option value="">Selecciona tu dentista</option>
 
