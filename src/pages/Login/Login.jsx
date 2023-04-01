@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { logMe } from '../../services/apiCalls';
 import { Col, Container, Row } from 'react-bootstrap';
 
+import icon from '../../img/login-1.png'
+
+
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -111,11 +114,12 @@ export const Login = () => {
   };
 
   return (
-    <Container fluid>
+    <Container fluid className='containerlogin-D'>
         <Row className="design login-D">
             <Col lg={6}>
             <div className="titleDesign">
             <h2>Inicia sesión</h2>
+            <img className="d-block" src={ icon } alt="login"/>
             </div>
               {welcome !== "" ? (
                 <div>{welcome}</div>

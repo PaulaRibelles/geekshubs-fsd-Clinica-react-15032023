@@ -6,6 +6,8 @@ import { bringAppointments } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
 import { userData } from "../Slices/userSlice";
 
+import "./userAppointment.css";
+
 
 export const AppointmentsUser = () => {
     const [user, setUser] = useState([])
@@ -28,13 +30,12 @@ useEffect(() => {
 
 
 return (
-    <Container fluid>
+    <Container fluid className="app-D">
         <Row className='design'>
-            <Col className='d-flex flex-column align-items-center justify-content-center'>
-            
+            <Col lg={10} className='d-flex flex-column align-items-center justify-content-center'>
                 {user.map((citas) => {
                     return (
-                <Card style={{ width: '30rem'}}>
+                <Card className="card2-D">
                     <Card.Body>
                     <Card.Title>{citas.Doctor.medical_speciality}</Card.Title>
                     <Card.Text>{citas.Doctor.User.name} {citas.Doctor.User.surname}</Card.Text>

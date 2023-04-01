@@ -1,5 +1,8 @@
-.design {
+body{
   background-color:  rgb(255, 255, 255);
+}
+
+.design {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,28 +16,59 @@
   justify-content: center;
   align-items: center;
   margin-top: 2em;
+  color: #db6403;
+}
+
+.FootDesign{
+  height:50px;
+  line-height:50px;
+  background:rgb(23, 23, 23);
+  color:white;
+  text-align:center;
+  position: defoult;
+  justify-content: space-around;
+  bottom:0;
+  left:0;
+  width:100%;
+  min-height: 65vh;
 }
 
 .input-D{
   margin-top: 1em;
   flex-direction: column;
+  width: 18em;
+  margin-left: 2em;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
+
 
 .buttonDes{
   width: 5em;
   height: 2em;
   margin-top: 2em;
+  margin-left: 8em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:  rgb(210, 141, 2);
+  background-color:  rgb(180, 177, 170);
   color: white;
   border-radius: 0.3em;
   cursor: pointer;
 }
 
 .buttonAct{
-  background-color:  rgb(206, 149, 43);
+  width: 5em;
+  height: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background-color:  #db6403;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
   cursor: pointer;
 }
 

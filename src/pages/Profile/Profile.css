@@ -1,0 +1,18 @@
+
+.perfil-D{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-D{
+    width: 20em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    justify-content: center;
+}
+
+.cardimg-D{
+    width: 10em;
+    justify-content: center;
+}

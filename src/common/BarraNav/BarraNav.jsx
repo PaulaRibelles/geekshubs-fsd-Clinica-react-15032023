@@ -9,8 +9,6 @@ import "./BarraNav.css"
 export const BarraNav = () => {
 
     const credencialesRdx = useSelector(userData)
-    console.log(credencialesRdx)
-
     const dispatch = useDispatch() 
 
     const logmeOut = () => {

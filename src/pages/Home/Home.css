@@ -1,4 +1,24 @@
-/* .home-D{
-    width: 79em;
-    height: 55em;
-  } */
+/* .div-home-D{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: rgb(255, 195, 127);
+  height: 20em;
+}
+
+.logo-smile{
+  margin-bottom: 0.5em;
+}
+
+.title-us{
+  margin-bottom: 0.5em;
+}
+
+.text-us{
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+} */

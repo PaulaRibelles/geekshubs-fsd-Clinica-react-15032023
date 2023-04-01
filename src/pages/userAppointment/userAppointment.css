@@ -1,0 +1,12 @@
+.app-D{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card2-D{
+    width: 20em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    justify-content: center;
+}

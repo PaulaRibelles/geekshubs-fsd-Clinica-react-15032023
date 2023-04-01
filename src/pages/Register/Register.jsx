@@ -6,6 +6,8 @@ import { checkInputs } from '../../Helpers/useful';
 import { registerMe } from '../../services/apiCalls';
 import "./Register.css";
 
+import website from '../../img/website.png'
+
 export const Register = () => {
   const navigate = useNavigate();
 
@@ -119,11 +121,12 @@ const Registro = () => {
 };
 
   return (
-    <Container fluid>
+    <Container fluid className='container-D'>
       <Row className="design register-D">
         <Col lg={6}>
           <div className="titleDesign">
             <h2>Registro Usuario</h2>
+            <img className="d-block" src={ website } alt="user"/>
           </div>
           {welcome !== "" ? (
                 <div>{welcome}</div>
@@ -177,7 +180,7 @@ const Registro = () => {
               type="text"
               maxLength={9}
               name="dni"
-              placeholder="Escribe tu DNI"
+              placeholder="A00000000"
               required={true}
               changeFunction={(e) => inputHandler(e)}
               blurFunction={(e) => inputValidate(e)}
@@ -213,7 +216,7 @@ const Registro = () => {
               type="text"
               maxLength={12}
               name="phone"
-              placeholder="+34 Tu número de teléfono"
+              placeholder="+34 000000000"
               required={true}
               changeFunction={(e) => inputHandler(e)}
               blurFunction={(e) => inputValidate(e)}

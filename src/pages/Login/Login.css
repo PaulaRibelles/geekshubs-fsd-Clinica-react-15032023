@@ -1,8 +1,19 @@
+
+.containerlogin-D{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 3em;
+}
+
+
 .login-D{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1em;
+    margin-top: 3em;
+    /* border: 0.3em solid rgb(45, 183, 230); */
+    width: 50em;
 }
 
