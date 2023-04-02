@@ -44,12 +44,14 @@ Tecnologías utilizadas:
 
 ## Vistas
  
+Home
+<img src="./src/img/readme-home.png"> <img src="./src/img/readme-movil.png">
 Register
-<img src="./src/img/captura-register.png">
+<img src="./src/img/readme-register.png">
 Login
-<img src="./src/img/captura-login.png">
+<img src="./src/img/readme-login.png">
 Pedir cita
-<img src="./src/img/captura-pedir-cita.png">
+<img src="./src/img/readme-pedir-cita.png">
 
 ## Futuras funcionalidades
 <p>Vista actualizar perfil </p>
