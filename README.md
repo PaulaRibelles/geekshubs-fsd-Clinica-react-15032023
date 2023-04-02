@@ -42,20 +42,20 @@ Tecnologías utilizadas:
 </a>
  </div>
 
-## Vistas
+## Vistas :eyes:
  
-### Home
+<h4>Home</h4>
 <img src="./src/img/readme-home.png">
-### Home mobile
+<h4>Home mobile</h4>
 <img src="./src/img/readme-movil.png">
-### Register
+<h4>Register</h4>
 <img src="./src/img/readme-register.png">
-### Login
+<h4>Login</h4>
 <img src="./src/img/readme-login.png">
-### Pedir cita
+<h4>Pedir cita</h4>
 <img src="./src/img/readme-pedir-cita.png">
 
-## Futuras funcionalidades
+## Futuras funcionalidades :pencil:
 <p>Vista actualizar y/o eliminar perfil </p>
 <p>Vista actualizar y/o eliminar citas </p>
 
