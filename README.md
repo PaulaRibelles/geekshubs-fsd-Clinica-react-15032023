@@ -44,18 +44,20 @@ Tecnologías utilizadas:
 
 ## Vistas
  
-Home
-<img src="./src/img/readme-home.png"> <img src="./src/img/readme-movil.png">
-Register
+### Home
+<img src="./src/img/readme-home.png">
+### Home mobile
+<img src="./src/img/readme-movil.png">
+### Register
 <img src="./src/img/readme-register.png">
-Login
+### Login
 <img src="./src/img/readme-login.png">
-Pedir cita
+### Pedir cita
 <img src="./src/img/readme-pedir-cita.png">
 
 ## Futuras funcionalidades
-<p>Vista actualizar perfil </p>
-<p>Vista como doctor ver todas las citas</p>
+<p>Vista actualizar y/o eliminar perfil </p>
+<p>Vista actualizar y/o eliminar citas </p>
 
 ## Contribuciones :mailbox:
 Las sugerencias y aportaciones son siempre bienvenidas.  
