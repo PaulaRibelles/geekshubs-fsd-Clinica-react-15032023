@@ -17,7 +17,7 @@ export const BarraNav = () => {
     }
 
     return (
-        <Navbar className='BarraNav-D' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='BarraNav-D' collapseOnSelect expand="lg">
         <Container fluid>
             <Navbar.Brand as={Link} to='/'>TrueSmile</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
