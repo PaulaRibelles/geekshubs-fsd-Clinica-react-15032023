@@ -17,6 +17,7 @@ export const AppointmentsUser = () => {
 
 useEffect(() => {
     if(!user?.name){
+        
         bringAppointments(credentialsRdx.credentials.token.token)
         .then((respuesta) => {
             setUser(respuesta.data)
@@ -27,6 +28,8 @@ useEffect(() => {
     navigate("/");
     }
 }, [user.name]);
+
+console.log(user)
 
 
 return (

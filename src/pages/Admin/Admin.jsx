@@ -44,7 +44,7 @@ export const AdminAppointments = () => {
         })}
         </Col>
       ) : (
-        <div> Están llegando </div>
+        <div> No hay citas disponibles </div>
       )}
     </Row>
 </Container>

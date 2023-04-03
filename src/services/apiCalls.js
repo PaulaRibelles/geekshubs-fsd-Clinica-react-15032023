@@ -41,9 +41,10 @@ export const myAppointment = async (body, token) => {
 }
 
 export const bringAppointments = async (token) => {
+    console.log(token);
     let config = {
         headers: { 
-            'Authorization': 'Bearer '+ token.token,    
+            'Authorization': 'Bearer '+ token,    
         }
     };
     return await axios.get(`${root}/appointment/viewPatient`, config);

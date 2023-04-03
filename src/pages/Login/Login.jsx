@@ -99,6 +99,7 @@ export const Login = () => {
       .then(respuesta =>{
 
       let decodificado = decodeToken(respuesta.data.token) 
+      console.log(respuesta.data.token)
       let datosBack = {
         token: respuesta.data,
         user: decodificado,
