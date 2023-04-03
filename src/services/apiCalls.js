@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// const root = "https://clinica-truesmile-production.up.railway.app"
+const root = "https://clinica-truesmile-production.up.railway.app"
 
-const root = "http://localhost:3000"
+// const root = "http://localhost:3000"
 
 export const logMe = async (body) => {
     return await axios.post(`${root}/auth/login`, body);
