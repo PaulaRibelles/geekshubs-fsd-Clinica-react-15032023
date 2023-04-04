@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-// import { useNavigate } from "react-router-dom";
+
+import './Admin.css'
 
 import { useSelector } from "react-redux";
 import { userData } from "../Slices/userSlice";
 import { allAppointments } from "../../services/apiCalls";
-// import { addChoosen } from "../detailSlice";
+
 
 export const AdminAppointments = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+
 
   const [appointments, setAppointments] = useState([]);
 
@@ -29,10 +29,10 @@ export const AdminAppointments = () => {
     <Container fluid>
     <Row className='design'>
       {appointments.length > 0 ? (
-        <Col className='d-flex flex-column align-items-center justify-content-center'>
+        <Col lg={10} className='d-flex flex-column align-items-center justify-content-center'>
             {appointments.map((citas) => {
                 return (
-              <Card key={citas.id} style={{ width: '30rem'}}>
+              <Card className='Card-Admin' key={citas.id}>
                 <Card.Body>
                 <Card.Title>{citas.Doctor.medical_speciality}</Card.Title>
                 <Card.Text>Doctor/a: {citas.Doctor.User.name} {citas.Doctor.User.surname}</Card.Text>

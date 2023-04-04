@@ -41,7 +41,7 @@ export const myAppointment = async (body, token) => {
 }
 
 export const bringAppointments = async (token) => {
-    console.log(token);
+
     let config = {
         headers: { 
             'Authorization': 'Bearer '+ token,    

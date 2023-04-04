@@ -16,7 +16,6 @@ export const Users = () => {
 
     useEffect(()=>{
         if(users.length === 0){
-            console.log(ReduxCredentials.credentials?.token)
             bringUsers(ReduxCredentials.credentials?.token)
                 .then(
                     result => {

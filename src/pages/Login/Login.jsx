@@ -99,7 +99,6 @@ export const Login = () => {
       .then(respuesta =>{
 
       let decodificado = decodeToken(respuesta.data.token) 
-      console.log(respuesta.data.token)
       let datosBack = {
         token: respuesta.data,
         user: decodificado,
@@ -147,7 +146,7 @@ export const Login = () => {
                 </div>
               )
             }
-            <div className='buttonDes' onClick={() => logmeIn()}>Login</div>
+            <div className='buttonAct' onClick={() => logmeIn()}>Login</div>
         
             </Col>
         </Row>
